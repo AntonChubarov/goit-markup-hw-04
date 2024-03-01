@@ -202,6 +202,20 @@ header {
   width: calc((100% - 3 * 24px) / 4);
 }
 
+.advantages-icon {
+  background-color: var(--cloud);
+  padding: 24px 0;
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
+
+.advantages-icon > svg {
+  display: block;
+  margin: 0 auto;
+  width: 64px;
+  height: 64px;
+}
+
 .advantages-list-item-title {
   font-size: 20px;
   line-height: 1.2;
