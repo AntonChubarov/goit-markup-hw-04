@@ -106,9 +106,35 @@ header {
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  display: block;
+  display: inline-block;
   padding-top: 24px;
   padding-bottom: 24px;
+  position: relative;
+
+  transition-property: color;
+  transition-duration: 250ms;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--ocean);
+}
+
+.current {
+  color: var(--ocean);
+}
+
+.current::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--ocean);
+  display: block;
 }
 
 .addresses-list {
@@ -116,11 +142,6 @@ header {
   flex-wrap: wrap;
   gap: 40px;
   row-gap: 0;
-}
-
-.nav-link:hover,
-.nav-link:focus {
-  color: var(--ocean);
 }
 
 .address-link {
@@ -131,6 +152,9 @@ header {
   display: block;
   padding-top: 24px;
   padding-bottom: 24px;
+
+  transition-property: color;
+  transition-duration: 250ms;
 }
 
 .address-link:hover,
@@ -156,8 +180,11 @@ header {
 
 .order-section {
   background-color: var(--navy-blue);
-  background-image: linear-gradient(rgba(46, 47, 66, 0.7),
-  rgba(46, 47, 66, 0.7)), url(../images/people-office.jpg);
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/people-office.jpg);
   background-position: 50% 50%;
   background-size: 1440px;
   background-repeat: no-repeat;
@@ -189,6 +216,9 @@ header {
   border: none;
   border-radius: 4px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+
+  transition-property: background-color;
+  transition-duration: 500ms;
 }
 
 .order-service-button:hover,
@@ -280,9 +310,10 @@ header {
   padding-bottom: 32px;
   width: calc((100% - 3 * 24px) / 4);
   border-radius: 0 0 4px 4px;
-  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
-  0 1px 1px 0 rgba(46, 47, 66, 0.16),
-  0 1px 6px 0 rgba(46, 47, 66, 0.08);
+  box-shadow:
+    0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16),
+    0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 
 .team-list-item > img {
@@ -319,6 +350,9 @@ header {
   width: 40px;
   height: 40px;
   display: flex;
+
+  transition-property: background-color;
+  transition-duration: 500ms;
 }
 
 .team-member-contact-link:hover,
@@ -349,6 +383,9 @@ header {
   border: 1px solid var(--light-slate);
   border-radius: 4px;
   width: calc((100% - 5 * 24px) / 6);
+
+  transition-property: border-top-color, border-bottom-color, border-left-color, border-right-color;
+  transition-duration: 50ms;
 }
 
 .customer-list-item:hover,
@@ -360,6 +397,9 @@ header {
   fill: var(--light-slate);
   margin: 0 auto;
   display: block;
+
+  transition-property: fill;
+  transition-duration: 500ms;
 }
 
 .customer-list-item:hover .customer-icon,
@@ -395,6 +435,9 @@ header {
   padding: 12px 24px;
   border: 1px solid var(--cornflower);
   border-radius: 4px;
+
+  transition-property: color, background-color;
+  transition-duration: 50ms;
 }
 
 .filter-button:hover,
@@ -412,13 +455,17 @@ header {
 
 .project-list-item {
   width: calc((100% - 2 * 24px) / 3);
+
+  transition-property: box-shadow;
+  transition-duration: 500ms;
 }
 
 .project-list-item:hover,
 .project-list-item:focus {
-  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
-  0 1px 1px 0 rgba(46, 47, 66, 0.16),
-  0 1px 6px 0 rgba(46, 47, 66, 0.08);
+  box-shadow:
+    0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16),
+    0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 
 .project-list-item > a > img {
@@ -493,6 +540,9 @@ footer > .container {
   width: 40px;
   height: 40px;
   display: flex;
+
+  transition-property: background-color;
+  transition-duration: 500ms;
 }
 
 .social-media-link:hover,
