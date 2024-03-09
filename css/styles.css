@@ -453,6 +453,27 @@ header {
   row-gap: 48px;
 }
 
+.project-image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--iris);
+  padding: 40px 32px;
+  transform: translateY(100%);
+  transition: 100ms ease-in;
+}
+
+.project-image-overlay-text {
+  color: var(--cloud)
+}
+
 .project-list-item {
   width: calc((100% - 2 * 24px) / 3);
 
@@ -470,6 +491,10 @@ header {
 
 .project-list-item > a > img {
   max-width: 100%;
+}
+
+.project-list-item:hover .project-image-overlay {
+  transform: translateY(0);
 }
 
 .project-list-info {
