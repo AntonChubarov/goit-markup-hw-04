@@ -7,6 +7,7 @@
   --ocean: #404bbf;
   --white-background: #ffffff;
   --white-text: #ffffff;
+  --white-common: #ffffff;
   --slate: #434455;
   --green: #31d0aa;
   --light-slate: #8e8f99;
@@ -190,8 +191,8 @@ header {
   background-image: linear-gradient(
       rgba(var(--navy-blue-rgb), 0.7),
       rgba(var(--navy-blue-rgb), 0.7)
-  ),
-  url(../images/people-office.jpg);
+    ),
+    url(../images/people-office.jpg);
   background-position: center;
   background-size: 1440px auto;
   background-repeat: no-repeat;
@@ -248,7 +249,10 @@ header {
 
 .advantages-icon {
   background-color: var(--cloud);
-  padding: 24px 0;
+  height: 112px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 8px;
   border-radius: 4px;
 }
@@ -356,6 +360,8 @@ header {
   width: 40px;
   height: 40px;
   display: flex;
+  justify-content: center;
+  align-items: center;
 
   transition-property: background-color;
   transition-duration: 250ms;
@@ -364,13 +370,12 @@ header {
 
 .team-member-contact-link:hover,
 .team-member-contact-link:focus {
-  background-color: var(--green);
+  background-color: var(--ocean);
 }
 
 .team-member-contact-icon {
   width: 16px;
   height: 16px;
-  margin: auto;
   fill: var(--cloud);
 }
 
@@ -385,11 +390,19 @@ header {
 }
 
 .customer-list-item {
+  width: calc((100% - 5 * 24px) / 6);
+  height: 88px;
+}
+
+.customer-list-item > a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-sizing: border-box;
-  padding: 16px 0;
   border: 1px solid var(--light-slate);
   border-radius: 4px;
-  width: calc((100% - 5 * 24px) / 6);
 
   transition-property: border-top-color, border-bottom-color, border-left-color,
     border-right-color;
@@ -397,8 +410,8 @@ header {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.customer-list-item:hover,
-.customer-list-item:focus {
+.customer-list-item:hover > a,
+.customer-list-item:focus > a {
   border-color: var(--ocean);
 }
 
@@ -543,12 +556,20 @@ header {
   width: 100%;
   height: 100%;
   background-color: rgba(var(--navy-blue-rgb), 0.4);
+
+  transition-property: opacity, visibility;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .is-hidden {
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
+
+  transition-property: opacity, visibility;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal {
@@ -576,10 +597,30 @@ header {
   width: 24px;
   height: 24px;
   padding: 0;
+
+  transition-property: background-color, border-top-color, border-left-color,
+    border-bottom-color, border-right-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-button-cross {
   fill: var(--navy-blue);
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-button:hover,
+.modal-close-button:focus {
+  background-color: var(--ocean);
+  border-color: var(--ocean);
+}
+
+.modal-close-button:hover > .modal-close-button-cross,
+.modal-close-button:focus > .modal-close-button-cross {
+  fill: var(--white-common);
 }
 
 /*endregion*/
@@ -615,6 +656,7 @@ footer > .container {
 .social-media-container > p {
   color: var(--white-text);
   margin-bottom: 16px;
+  font-weight: 500;
 }
 
 .social-media-list {
@@ -628,6 +670,8 @@ footer > .container {
   width: 40px;
   height: 40px;
   display: flex;
+  justify-content: center;
+  align-items: center;
 
   transition-property: background-color;
   transition-duration: 250ms;
@@ -642,6 +686,5 @@ footer > .container {
 .social-media-icon {
   width: 24px;
   height: 24px;
-  margin: auto;
   fill: var(--cloud);
 }
